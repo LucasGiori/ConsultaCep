@@ -111,11 +111,12 @@
                 cep = cep.replace('-','');              
                 
                 $.ajax({ 
-                    type: "POST", 
-                    url: "ConsultaCep.php",
+                    type: "GET", 
+                    url: "https://cep.awesomeapi.com.br/json/"+cep,
                     data: {'cep':cep}, 
                     success: function(result){ 
-                        result =JSON.parse(result);
+                        // result =JSON.parse(result);
+                        result = JSON.parse(JSON.stringify(result))
                         $( "#cepv" ).val(result.cep);                         
                         $( "#logradouro" ).val(result.address);            
                         $( "#cidade" ).val(result.city); 
