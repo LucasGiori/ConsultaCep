@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+    font-weight: lighter;
+}
+​
+.form-control,
+.btn {
+    border-radius: 0px;
+}
+​
+.parsley-errors-list {
+    color: #f00;
+}
+​
+.parsley-error {
+    border: 1px solid #f00;
+}
