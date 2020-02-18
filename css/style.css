@@ -3,6 +3,11 @@ h1 {
     font-weight: lighter;
 }
 ​
+.sombra {
+    /* angulo, distancia, blur  */
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
 .form-control,
 .btn {
     border-radius: 0px;
