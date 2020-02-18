@@ -23,9 +23,31 @@
 ​
 ​
 <body>
+    <header class="fixed-top">
+        <nav class="navbar bg-light  navbar-expand-md shadow-sm">
+          <a href="#nav" class="scrollSuave navbar-brand"><img src="" class="logo"></a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Consulta Cep</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link " href="#novasimplementacoes">Novas Implementações</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link scrollSuave" href="#novasimplementacoes">Novas Implementações</a>
+              </li> -->
+            </ul>
+          </div>
+        </nav>
+      </header>
+
     <div class="container border rounded p-5 mt-5 shadow">
         <h1>Busca CEP</h1>
-        <form name="contato" method="post" action="ConsultaCep.php" class="form-group" data-parsley-validate>
+        <form name="contato" method="post" action="" class="form-group" data-parsley-validate>
             <div class="row">
 ​
                 <div class="col-md-6 my-2">
@@ -97,6 +119,66 @@
             </div>
         </div>
     </div>
+
+    <footer class="bg-light py-5" id="contato">
+        <div class="container">
+           
+            <!-- Rodapé do desenvolvedor  -->
+            <div class="row my-5">
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <h4>Desenvolvido por</h4>
+                        </li>
+                        <ul>
+                            <li>
+                                <p class="lead">Lucas Giori Cesconetto</p>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <h4>Para mais informações</h4>
+                        </li>
+                        <ul>
+                            <li>
+                                <i class="fab fa-github"> - <a href="https://github.com/LucasGiori"> Meu GitHub</a></i>
+                                <p><i class="fas fa-envelope"> - </i> lucasgioricesconetto@gmail.com</p>
+                                <p><i class="fab fa-whatsapp"></i> - (69) 9.99337-0285</p>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <h4>Minhas Redes Sociais</h4>
+                        </li>
+                        <ul>
+                            <li>
+                                <i class="fab fa-instagram"> - <a href="https://www.instagram.com/lucasgiori/"> Lucas Giori Cesconetto</a></i><br>
+                                <i class="fab fa-facebook"> - <a href="https://www.facebook.com/lucas.gioricesconetto"> Lucas Giori Cesconetto</a></i><br>
+                                <i class="fab fa-linkedin"> - <a href="https://www.linkedin.com/in/lucasgiori/"> Lucas </a></i><br>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="lead text-center text-muted">Busca CEP - Todos os direitos reservados</p>
+            <hr>
+        </div>
+        <div>
+            <ul class="nav mr-3 float-right">
+                <li class="nav-item">
+                    <a class="nav-link scrollSuave btn btn-outline-primary rounded-circle" href="#nav"><i class="fas fa-home"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
 
 
     <script type="text/javascript" src="js/main.js"></script>
