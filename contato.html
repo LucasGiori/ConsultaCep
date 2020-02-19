@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+​
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/efeitomaquina.css"/> 
+       
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/parsley.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+    <script src="https://kit.fontawesome.com/5ae85dff3f.js" crossorigin="anonymous"></script>
+    
+
+   
+    <title>BUSCA CEP</title>
+</head>
+​
+​
+<body>
+    <header class="fixed-top">
+        <nav class="navbar bg-light  navbar-expand-md shadow-sm">
+          <a href="#nav" class="scrollSuave navbar-brand"><img src="" class="logo"></a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Consulta Cep</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link " href="contato.html">Contato</a>
+              </li>
+              <!--<li class="nav-item">
+                <a class="nav-link scrollSuave" href="#novasimplementacoes">Novas Implementações</a>
+              </li> -->
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+    <div class="container border rounded p-5 mt-5 shadow">
+        <h1>Efeito Máquina com JS</h1>
+        <form name="efeito" method="post" action="" class="form-group" data-parsley-validate>
+            <div class="row">
+​
+                <div class="col-md-6 my-2">
+                    <label for="efeitomaquina">Mensagem</label>
+                    <input type="text" class="form-control" name="efeitomaquina" id="efeitomaquina" placeholder="Informe um Texto...">
+                    <span>Informe um texto para o efeito de máquina funcionar</span>
+                </div>
+                ​
+            </div>
+            <div class="row">
+                <div class="col-md-6 my-2">
+                    <button type="reset" id="cancelar" class="btn btn-danger">Cancelar   <i class="fas fa-skull-crossbones"></i></button>
+                    <button type="button" id="executar" class="btn btn-success">Executar Máquina JS  <i class="far fa-paper-plane"></i></button>
+                </div>
+            </div>            
+        </form>
+    </div>  
+    <div class="container border rounded p-5 mt-5 shadow">
+        <h1 class="tituloprincipal">Teste</h1>
+    </div><br><br>
+
+    <footer class="bg-light py-5" id="contato">
+        <div class="container">
+           
+            <!-- Rodapé do desenvolvedor  -->
+            <div class="row my-5">
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <h4>Desenvolvido por</h4>
+                        </li>
+                        <ul>
+                            <li>
+                                <p class="lead">Lucas Giori Cesconetto</p>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <h4>Para mais informações</h4>
+                        </li>
+                        <ul>
+                            <li>
+                                <i class="fab fa-github"> - <a href="https://github.com/LucasGiori"> Meu GitHub</a></i>
+                                <p><i class="fas fa-envelope"> - </i> lucasgioricesconetto@gmail.com</p>
+                                <p><i class="fab fa-whatsapp"></i> - (69) 9.99337-0285</p>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li>
+                            <h4>Minhas Redes Sociais</h4>
+                        </li>
+                        <ul>
+                            <li>
+                                <i class="fab fa-instagram"> - <a href="https://www.instagram.com/lucasgiori/"> lucasgiori</a></i><br>
+                                <i class="fab fa-facebook"> - <a href="https://www.facebook.com/lucas.gioricesconetto"> lucas.gioricesconetto</a></i><br>
+                                <i class="fab fa-linkedin"> - <a href="https://www.linkedin.com/in/lucasgiori/"> Lucas Giori </a></i><br>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="lead text-center text-muted">Busca CEP - Todos os direitos reservados</p>
+            <hr>
+        </div>
+        <div>
+            <ul class="nav mr-3 float-right">
+                <li class="nav-item">
+                    <a class="nav-link scrollSuave btn btn-outline-primary rounded-circle" href="#nav"><i class="fas fa-home"></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="js/efeitomaquina.js"></script>
+    <script>
+        $(document).ready(function(){ 
+            $("#executar").click    (function(){                
+                const titulo = document.querySelector('.tituloprincipal');
+                console.log(titulo)
+                typeWrite(titulo)
+            });
+        });  
+    </script>
+
+
+
+</body>
+​
+</html>
