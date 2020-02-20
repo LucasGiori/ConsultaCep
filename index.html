@@ -16,7 +16,6 @@
     <script src="js/parsley.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="https://kit.fontawesome.com/5ae85dff3f.js" crossorigin="anonymous"></script>
-
    
     <title>BUSCA CEP</title>
 </head>
@@ -108,17 +107,14 @@
                 <input type="text" class="form-control" name="longitude" id="longitude">
             </div>             
         </div>
-    </div>
-
-    <div class="container border rounded p-5 mt-5 shadow">
-        <h3>Maps</h3>
-        <div class="row">​ 
-            <div class="col-md-12 my-2">
-                <div style="width: 1050px; height: 480px" id="mapContainer">
-                </div>    
+        <div class="row">
+            <div class="col mt-4">
+                <div id="mapContainer"></div>
             </div>
         </div>
-    </div><br><br>
+    </div>
+
+    <br><br>
 
     <footer class="bg-light py-5" id="contato">
         <div class="container">
@@ -179,7 +175,7 @@
         </div>
     </footer>
 
-
+    const edit 
 
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript">
@@ -188,35 +184,44 @@
         });           
     </script>
     <script>
-        $(document).ready(function(){ 
-			$("#consultar").click(function(){                           
-                var cep = $( "#cep" ).val();                
-                cep = cep.replace('-','');              
-                
-                $.ajax({ 
-                    type: "GET", 
-                    url: "https://cep.awesomeapi.com.br/json/"+cep,
-                    data: {'cep':cep}, 
-                    success: function(result){ 
-                        // result =JSON.parse(result);
-                        result = JSON.parse(JSON.stringify(result))
-                        $( "#cepv" ).val(result.cep);                         
-                        $( "#logradouro" ).val(result.address);            
-                        $( "#cidade" ).val(result.city); 
-                        $( "#estado" ).val(result.state);  
-                        $( "#latitude" ).val(result.lat);
-                        $( "#longitude" ).val(result.lng);
-                        $( "#codibge" ).val(result.city_ibge); 
-                        $( "#ddd" ).val(result.ddd); 
-                        //$("#consultar").clik(function(){  
-                        moveMapTo(map);
-                        //});    
-                       
+        // referenciando o botão consultar
+        const btnConsultarElement = document.getElementById('consultar');
+        
+        // ação do click -> requisita api CEP
+        btnConsultarElement.onclick = function() {
+            
+            const cepElement = document.getElementById('cep').value
+            const cep = cepElement.replace('-', '');
+        
+            const url = "https://cep.awesomeapi.com.br/json/" + cep;
 
-                    }
-                });
-            });
-        }); 
+            fetch(url)
+                .then(resp => resp.json())
+                .then(data => {
+                    // função que exibe o resultado
+                    renderResult(data);
+                })
+        }
+        
+        // função rederizar dados nos inputs de resultado
+        function renderResult(data) {
+
+            // inputs resultado
+            document.getElementById('cepv').value = data.cep;
+            document.getElementById('logradouro').value = data.address + ', ' + data.district;
+            document.getElementById('cidade').value = data.city;
+            document.getElementById('estado').value = data.state;
+            document.getElementById('ddd').value = data.ddd;
+            document.getElementById('latitude').value = data.lat;
+            document.getElementById('longitude').value = data.lng;
+            document.getElementById('codibge').value = data.city_ibge;
+           
+            // Mapa
+            moveMapTo(map);
+
+        }
+ 
+
     </script>
 
 
