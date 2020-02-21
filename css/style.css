@@ -20,3 +20,7 @@ h1 {
 .parsley-error {
     border: 1px solid #f00;
 }
+
+#mapContainer {
+    height: 380px;
+}
