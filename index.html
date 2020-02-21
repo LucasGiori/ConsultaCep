@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 ​
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
@@ -16,96 +17,101 @@
     <script src="js/parsley.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="https://kit.fontawesome.com/5ae85dff3f.js" crossorigin="anonymous"></script>
-   
+
     <title>BUSCA CEP</title>
 </head>
 ​
 ​
+
 <body>
     <header class="fixed-top">
         <nav class="navbar bg-light  navbar-expand-md shadow-sm">
-          <a href="#nav" class="scrollSuave navbar-brand"><img src="" class="logo"></a>
-          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Consulta Cep</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="contato.html">Contato</a>
-              </li>
-              <!--<li class="nav-item">
+            <a href="#nav" class="scrollSuave navbar-brand"><img src="" class="logo"></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Consulta Cep</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="contato.html">Contato</a>
+                    </li>
+                    <!--<li class="nav-item">
                 <a class="nav-link scrollSuave" href="#novasimplementacoes">Novas Implementações</a>
               </li> -->
-            </ul>
-          </div>
+                </ul>
+            </div>
         </nav>
-      </header>
+    </header>
 
     <div class="container border rounded p-5 mt-5 shadow">
         <h1>Busca CEP</h1>
         <form name="contato" method="post" action="" class="form-group" data-parsley-validate>
             <div class="row">
-​
+                ​
                 <div class="col-md-6 my-2">
                     <label for="cep">CEP</label>
-                    <input type="text" class="form-control" name="cep" id="cep" required placeholder="Informe um CEP..." data-parsley-required-message="Por favor Informe um CEP..." minlength="4" data-parsley-minlength-message="Digite ao menos 4 Carcteres!">
+                    <input type="text" class="form-control" name="cep" id="cep" required placeholder="Informe um CEP..."
+                        data-parsley-required-message="Por favor Informe um CEP..." minlength="4"
+                        data-parsley-minlength-message="Digite ao menos 4 Carcteres!">
                 </div>
                 ​
             </div>
             <div class="row">
                 <div class="col-md-6 my-2">
-                    <button type="reset" id="cancelar" class="btn btn-danger">Cancelar   <i class="fas fa-skull-crossbones"></i></button>
-                    <button type="button" id="consultar" class="btn btn-success">Consultar  <i class="far fa-paper-plane"></i></button>
+                    <button type="reset" id="cancelar" class="btn btn-danger">Cancelar <i
+                            class="fas fa-skull-crossbones"></i></button>
+                    <button type="button" id="consultar" class="btn btn-success">Consultar <i
+                            class="far fa-paper-plane"></i></button>
                 </div>
-            </div>            
+            </div>
         </form>
-    </div>  
+    </div>
     <div class="container border rounded p-5 mt-5 shadow">
         <h3>Resultado</h3>
-        <div class="row">​            
+        <div class="row">​
             <div class="col-md-2 my-2">
                 <label for="cepv">CEP</label>
                 <input type="text" class="form-control" name="cepv" id="cepv">
-            </div> 
+            </div>
             <div class="col-md-5 my-2">
                 <label for="logradouro">Logradouro</label>
                 <input type="text" class="form-control" name="logradouro" id="logradouro">
-            </div> 
+            </div>
             <div class="col-md-5 my-2">
                 <label for="complemento">Complemento</label>
                 <input type="text" class="form-control" name="complemento" id="complemento">
             </div> ​
         </div>
-        <div class="row">​ 
+        <div class="row">​
             <div class="col-md-8 my-2">
                 <label for="cidade">Cidade</label>
                 <input type="text" class="form-control" name="cidade" id="cidade">
-            </div> ​           
+            </div> ​
             <div class="col-md-2 my-2">
                 <label for="estado">Estado</label>
                 <input type="text" class="form-control" name="estado" id="estado">
-            </div> 
+            </div>
             <div class="col-md-2 my-2">
                 <label for="ddd">DDD</label>
                 <input type="text" class="form-control" name="ddd" id="ddd">
-            </div>             
+            </div>
         </div>
-        <div class="row">​ 
+        <div class="row">​
             <div class="col-md-6 my-2">
                 <label for="codibge">Código IBGE</label>
                 <input type="text" class="form-control" name="codibge" id="codibge">
-            </div> ​           
+            </div> ​
             <div class="col-md-3 my-2">
                 <label for="latitude">Latitude</label>
                 <input type="text" class="form-control" name="latitude" id="latitude">
-            </div> 
+            </div>
             <div class="col-md-3 my-2">
                 <label for="longitude">Longitude</label>
                 <input type="text" class="form-control" name="longitude" id="longitude">
-            </div>             
+            </div>
         </div>
         <div class="row">
             <div class="col mt-4">
@@ -118,7 +124,7 @@
 
     <footer class="bg-light py-5" id="contato">
         <div class="container">
-           
+
             <!-- Rodapé do desenvolvedor  -->
             <div class="row my-5">
                 <div class="col-md-4">
@@ -154,9 +160,12 @@
                         </li>
                         <ul>
                             <li>
-                                <i class="fab fa-instagram"> - <a href="https://www.instagram.com/lucasgiori/"> lucasgiori</a></i><br>
-                                <i class="fab fa-facebook"> - <a href="https://www.facebook.com/lucas.gioricesconetto"> lucas.gioricesconetto</a></i><br>
-                                <i class="fab fa-linkedin"> - <a href="https://www.linkedin.com/in/lucasgiori/"> Lucas Giori </a></i><br>
+                                <i class="fab fa-instagram"> - <a href="https://www.instagram.com/lucasgiori/">
+                                        lucasgiori</a></i><br>
+                                <i class="fab fa-facebook"> - <a href="https://www.facebook.com/lucas.gioricesconetto">
+                                        lucas.gioricesconetto</a></i><br>
+                                <i class="fab fa-linkedin"> - <a href="https://www.linkedin.com/in/lucasgiori/"> Lucas
+                                        Giori </a></i><br>
                             </li>
                         </ul>
                     </ul>
@@ -169,30 +178,31 @@
         <div>
             <ul class="nav mr-3 float-right">
                 <li class="nav-item">
-                    <a class="nav-link scrollSuave btn btn-outline-primary rounded-circle" href="#nav"><i class="fas fa-home"></i></a>
+                    <a class="nav-link scrollSuave btn btn-outline-primary rounded-circle" href="#nav"><i
+                            class="fas fa-home"></i></a>
                 </li>
             </ul>
         </div>
     </footer>
 
-    const edit 
+    const edit
 
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('#cep').mask('99999-999');
-        });           
+        });
     </script>
     <script>
         // referenciando o botão consultar
         const btnConsultarElement = document.getElementById('consultar');
-        
+
         // ação do click -> requisita api CEP
-        btnConsultarElement.onclick = function() {
-            
+        btnConsultarElement.onclick = function () {
+
             const cepElement = document.getElementById('cep').value
             const cep = cepElement.replace('-', '');
-        
+
             const url = "https://cep.awesomeapi.com.br/json/" + cep;
 
             fetch(url)
@@ -202,7 +212,7 @@
                     renderResult(data);
                 })
         }
-        
+
         // função rederizar dados nos inputs de resultado
         function renderResult(data) {
 
@@ -215,16 +225,22 @@
             document.getElementById('latitude').value = data.lat;
             document.getElementById('longitude').value = data.lng;
             document.getElementById('codibge').value = data.city_ibge;
-           
+
             // Mapa
             moveMapTo(map);
 
+            // Marcador no mapa
+            function addMarkersToMap(map) {
+                var Marker = new H.map.Marker({
+                    lat: data.lat,
+                    lng: data.lng
+                });
+                map.addObject(Marker);
+            }
+            addMarkersToMap(map);
         }
- 
-
     </script>
 
-
 </body>
-​
+
 </html>
