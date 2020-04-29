@@ -8,12 +8,13 @@ LINK APPLICATION: https://consultacepajax.netlify.com/
 |
 Autor: Lucas Giori Cesconetto
 
+![GitHub Logo](https://i.ibb.co/1b1L7W9/Busca-Cep-Inicio.png)
+Format: ![Alt Text](https://i.ibb.co/1b1L7W9/Busca-Cep-Inicio.png)
 
 ![GitHub Logo](https://i.ibb.co/cc1Cz8m/Busca-Cep-Final.png)
-Format: ![Alt Text](url)
+Format: ![Alt Text](https://i.ibb.co/1b1L7W9/Busca-Cep-Inicio.png)
 
-![GitHub Logo](https://i.ibb.co/1b1L7W9/Busca-Cep-Inicio.png)
-Format: ![Alt Text](url)
+
 
 
 ### https://ibb.co/7JXR7p9
