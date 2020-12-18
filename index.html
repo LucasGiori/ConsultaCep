@@ -207,9 +207,11 @@
 
         // função rederizar dados nos inputs de resultado
         function renderResult(data) {
+            console.log(data)
             if(!data.message){
                 document.getElementById('cepv').value = data.cep;
-                document.getElementById('logradouro').value = data.address + ', ' + data.district;
+                document.getElementById('logradouro').value = data.address;
+                document.getElementById('complemento').value = data.district;
                 document.getElementById('cidade').value = data.city;
                 document.getElementById('estado').value = data.state;
                 document.getElementById('ddd').value = data.ddd;
@@ -228,10 +230,12 @@
                     });
                     map.addObject(Marker);
                 }
-                addMarkersToMap(map);                
+                addMarkersToMap(map);  
+                return              
             }
             // Alert caso não encontrar o cep
-            alert(data.message);            
+            alert(data.message);     
+            return       
         }
     </script>
 
