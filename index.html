@@ -17,12 +17,8 @@
     <script src="js/parsley.js"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="https://kit.fontawesome.com/5ae85dff3f.js" crossorigin="anonymous"></script>
-
     <title>BUSCA CEP</title>
 </head>
-​
-​
-
 <body>
     <header class="fixed-top">
         <nav class="navbar bg-light  navbar-expand-md shadow-sm">
@@ -32,12 +28,12 @@
             </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Consulta Cep</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="contato.html">Contato</a>
-                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="index.html">Consulta Cep</a>
+                      </li>
+                       <li class="nav-item">
+                        <a class="nav-link " href="contato.html">Máquina JS</a>
+                      </li>
                     <!--<li class="nav-item">
                 <a class="nav-link scrollSuave" href="#novasimplementacoes">Novas Implementações</a>
               </li> -->
@@ -119,9 +115,7 @@
             </div>
         </div>
     </div>
-
     <br><br>
-
     <footer class="bg-light py-5" id="contato">
         <div class="container">
 
@@ -185,8 +179,6 @@
         </div>
     </footer>
 
-    const edit
-
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -215,29 +207,31 @@
 
         // função rederizar dados nos inputs de resultado
         function renderResult(data) {
+            if(!data.message){
+                document.getElementById('cepv').value = data.cep;
+                document.getElementById('logradouro').value = data.address + ', ' + data.district;
+                document.getElementById('cidade').value = data.city;
+                document.getElementById('estado').value = data.state;
+                document.getElementById('ddd').value = data.ddd;
+                document.getElementById('latitude').value = data.lat;
+                document.getElementById('longitude').value = data.lng;
+                document.getElementById('codibge').value = data.city_ibge;
 
-            // inputs resultado
-            document.getElementById('cepv').value = data.cep;
-            document.getElementById('logradouro').value = data.address + ', ' + data.district;
-            document.getElementById('cidade').value = data.city;
-            document.getElementById('estado').value = data.state;
-            document.getElementById('ddd').value = data.ddd;
-            document.getElementById('latitude').value = data.lat;
-            document.getElementById('longitude').value = data.lng;
-            document.getElementById('codibge').value = data.city_ibge;
+                // Mapa
+                moveMapTo(map);
 
-            // Mapa
-            moveMapTo(map);
-
-            // Marcador no mapa
-            function addMarkersToMap(map) {
-                var Marker = new H.map.Marker({
-                    lat: data.lat,
-                    lng: data.lng
-                });
-                map.addObject(Marker);
+                // Marcador no mapa
+                function addMarkersToMap(map) {
+                    var Marker = new H.map.Marker({
+                        lat: data.lat,
+                        lng: data.lng
+                    });
+                    map.addObject(Marker);
+                }
+                addMarkersToMap(map);                
             }
-            addMarkersToMap(map);
+            // Alert caso não encontrar o cep
+            alert(data.message);            
         }
     </script>
 
